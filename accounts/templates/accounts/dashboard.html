@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="profile-container">
+
+    <h2>👤 {{ user.username }}</h2>
+
+    {% if user.profile.photo %}
+        <img src="{{ user.profile.photo.url }}" width="120">
+    {% endif %}
+
+    <p>{{ user.profile.bio }}</p>
+
+    <div class="links">
+        <a href="{{ user.profile.github }}">GitHub</a>
+        <a href="{{ user.profile.linkedin }}">LinkedIn</a>
+        <a href="{{ user.profile.instagram }}">Instagram</a>
+        <a href="{{ user.profile.website }}">Website</a>
+    </div>
+
+    <a href="{% url 'accounts:edit' %}">
+        Edit Profile
+    </a>
+
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="auth-container">
+
+    <h2>Account Created 🎉</h2>
+
+    <p>Welcome {{ new_user.username }}!</p>
+
+    <a href="{% url 'login' %}">Login now</a>
+
+</div>
+{% endblock %}
